@@ -1,0 +1,48 @@
+﻿@page
+@model EjemploRazorPages.Pages.CatalogoZona.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CatZona[0].Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CatZona[0].Filas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CatZona[0].Asientos_por_fila)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CatZona) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Asientos_por_fila)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

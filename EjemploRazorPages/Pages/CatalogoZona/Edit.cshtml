@@ -1,0 +1,45 @@
+﻿@page
+@model EjemploRazorPages.Pages.CatalogoZona.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>CatZona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CatZona.Id" />
+            <div class="form-group">
+                <label asp-for="CatZona.Descripcion" class="control-label"></label>
+                <input asp-for="CatZona.Descripcion" class="form-control" />
+                <span asp-validation-for="CatZona.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatZona.Filas" class="control-label"></label>
+                <input asp-for="CatZona.Filas" class="form-control" />
+                <span asp-validation-for="CatZona.Filas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatZona.Asientos_por_fila" class="control-label"></label>
+                <input asp-for="CatZona.Asientos_por_fila" class="form-control" />
+                <span asp-validation-for="CatZona.Asientos_por_fila" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

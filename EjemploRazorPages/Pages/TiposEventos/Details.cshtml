@@ -1,0 +1,25 @@
+﻿@page
+@model EjemploRazorPages.Pages.TiposEventos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoEvento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoEvento.descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoEvento.descripcion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TipoEvento.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
